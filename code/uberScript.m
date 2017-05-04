@@ -69,14 +69,6 @@ fmriMelanopsinMRIAnalysis_makeAnatTemplates(params);
 %% Project anatomical templates
 fmriMelanopsinMRIAnalysis_projectAnatTemplatesToFunc(params);
 
-%% Derive the HRFs
-fmriMelanopsinMRIAnalysis_deriveHRF(params);
-fmriMelanopsinMRIAnalysis_plotHRF(params);
-
-
-%% Derive the significant voxels
-fmriMelanopsinMRIAnalysis_fit400PctData(params);
-fmriMelanopsinMRIAnalysis_mergeMaps(params);
 
 %% Assemble V1 time series for the CRF data
 fmriMelanopsinMRIAnalysis_makeAllCRFPackets(params);
