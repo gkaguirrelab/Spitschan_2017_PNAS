@@ -14,6 +14,19 @@
 %           temporalFittingEngine
 
 
+%% Before starting: make sure all files are in place
+% 1.Decompress the full dataset in your "dataDir". Do not alter the path
+% structure of dataDir.
+
+% 2. Decompress the freesurferSubjects dir and copy the content in your
+% freesurfer subject folder.
+
+% 3. decompress the anatTemplate archive in your anatTemplatedDir
+
+%% Set toolboxtoolbox configuration for fMRI analysis
+
+tbUseProject('fmriMelanopsinMRIAnalysis');
+
 %% Define initial paths and Parameters
 
 params.resultsDir =  '/data/jag/MELA/MelanopsinMR/results';
@@ -22,7 +35,10 @@ params.dataDir = '/data/jag/MELA/MelanopsinMR';
 params.anatTemplateDir = '/data/jag/MELA/anat_templates';
 
 %% Create preprocessing scripts
-%%%%%%%%%%  NOTE to GIULIA: need to set recon all to 1
+% <!> This cell assumes that the freesurfer subjects files have been copied to
+% the local freesurfer subject folder. This will save time while doing
+% preprocessing, as the recon all step will be skipped.
+
 fmriMelanopsinMRIAnalysis_createPreprocessingScripts(params);
 
 %% Run the preprocessing scripts
@@ -30,6 +46,7 @@ fmriMelanopsinMRIAnalysis_createPreprocessingScripts(params);
 % the other. This will likely take serveral days to complete. If you have
 % access to a unix cluster architecture, consider navigating in each session
 % directoru and launching the job script called "submit_<subjectName>_all.sh"
+
 
 %%%%%%%%%%  NOTE to GIULIA: this works only on MAC and Linux
 
