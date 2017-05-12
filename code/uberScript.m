@@ -90,3 +90,33 @@ fmriMelanopsinMRIAnalysis_projectAnatTemplatesToFunc(params);
 %% Assemble V1 time series for the CRF data
 fmriMelanopsinMRIAnalysis_makeAllCRFPackets(params);
 
+
+
+%%  PART 2. Full brain ChiSquare Maps
+
+
+
+% code here
+
+
+
+%%  PART 3. Pupil data Analysis
+
+
+
+% code here
+
+
+
+
+
+%%  PART 4. Figure making
+
+
+
+% code here
+
+
+
+
+
