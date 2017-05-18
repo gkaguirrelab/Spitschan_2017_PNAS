@@ -18,7 +18,7 @@
 projRoot = tbGetPref('projectRoot', tbGetPref('projectRoot', fullfile(tbUserFolder(), 'projects')));
 tbUseProject('spitschan_2017_NatureNeuro', 'ToolboxRoot', projRoot);
 
-% Data are hosted on figshare. 
+% Data are hosted on figshare.
 % For steps (3)-(5), all necessary raw data are in the tar ball archive
 % spitschan_2017_data.tgz.a{a-p}. The MD5 sums are:
 %     MD5 (spitschan_2017_data.tgz.aa) = a74aa0d6ec05ec88ea35bc02c705b567
@@ -54,9 +54,16 @@ analysisDir = '~/Desktop/spitschan_2017_analysis';
 
 % Make the output directories
 if ~isdir(analysisDir);
-   mkdir(analysisDir);
-   mkdir(analysisDir, 'figures');
-   mkdir(analysisDir, 'tables');
+    mkdir(analysisDir);
+    mkdir(fullfile(analysisDir, 'figures'));
+    mkdir(fullfile(analysisDir, 'tables'));
+end
+
+if ~isdir(fullfile(analysisDir, 'figures'));
+    mkdir(fullfile(analysisDir, 'figures'));
+end
+if ~isdir(fullfile(analysisDir, 'tables'));
+    mkdir(fullfile(analysisDir, 'tables'));
 end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -179,9 +186,9 @@ psychoMelAnalysis_main(ppsPsychoDir, analysisDir);
 tbUseProject('splatterMelanopsinMRIAnalysis');
 
 %% (5b) Splatter data analysis
-splatterMel_AttentionTask(ppsRawDataDir);
-splatterMel_PerceptualDataSplatter(ppsRawDataDir);
-splatterMel_PhysiologicalSplatterAnalysis(ppsRawDataDir);
-splatterMel_SpectraTable(ppsRawDataDir);
-splatterMel_SpectralPlots(ppsRawDataDir);
-splatterMel_SplatterAnalysis(ppsRawDataDir);
+splatterMel_AttentionTask(ppsRawDataDir, analysisDir);
+splatterMel_PerceptualDataSplatter(ppsRawDataDir, analysisDir);
+splatterMel_PhysiologicalSplatterAnalysis(ppsRawDataDir, analysisDir);
+splatterMel_SpectraTable(ppsRawDataDir, analysisDir);
+splatterMel_SpectralPlots(ppsRawDataDir, analysisDir);
+splatterMel_SplatterAnalysis(ppsRawDataDir, analysisDir);
