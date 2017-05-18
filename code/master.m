@@ -18,7 +18,10 @@
 projRoot = tbGetPref('projectRoot', tbGetPref('projectRoot', fullfile(tbUserFolder(), 'projects')));
 tbUseProject('spitschan_2017_NatureNeuro', 'ToolboxRoot', projRoot);
 
-% Data are hosted on figshare.
+% Data are hosted on figshare. To download all the data, please run the
+% following commands:
+system('wget spitschan_2017_get_figshare_data.sh');
+
 % For steps (3)-(5), all necessary raw data are in the tar ball archive
 % spitschan_2017_data.tgz.a{a-p}. The MD5 sums are:
 %     MD5 (spitschan_2017_data.tgz.aa) = a74aa0d6ec05ec88ea35bc02c705b567
