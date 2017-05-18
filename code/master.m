@@ -76,21 +76,25 @@ end
 %           https://github.com/gkaguirrelab/fmriMelanopsinMRIAnalysis
 
 %% (1a) Before starting: make sure all files are in place
-% 1. Uncompress the full dataset in your "dataDir". Do not alter the path
-% structure of dataDir.
-% 2. Uncompress the freesurferSubjects dir and copy the content in your
-% freesurfer subject folder.
-% 3. Uncompress the anatTemplate archive in your anatTemplateDir.
-
+% Uncompress spitschan_2017_mri.  Do not alter the path
+% structure of the directory.
+%      % spitschan_2017_mri/rawbold contains the raw fmri data
+%      % spitschan_2017_mri/anat_templates contains anatomical template
+%       necessary for the analysis.
+%      % spitschan_2017_mri/fs_subjects contains the freesurfer subjects
+%      corresponding to the 4 subjects of the study. These subjects should
+%      be in the evironmental $SUBJECTS_DIR; you can either make this
+%      folder the environmental $SUBJECTS_DIR or copy the subjects folders
+%      to your existing $SUBJECTS_DIR
 %% (1b) Set up ToolboxToolbox configuration for fMRI analysis
 tbUseProject('fmriMelanopsinMRIAnalysis');
 
 %% (1c) Define initial paths and Parameters.
 % <!> NOTE: This need to be adjusted for your local structure.
-params.resultsDir = '/data/jag/MELA/MelanopsinMR/results';
-params.logDir = '/data/jag/MELA/MelanopsinMR/logs';
-params.dataDir = '/data/jag/MELA/MelanopsinMR';
-params.anatTemplateDir = '/data/jag/MELA/anat_templates';
+params.resultsDir = '~/Desktop/spitschan_2017_mri/results';
+params.logDir = '~/Desktop/spitschan_2017_mri/logs';
+params.dataDir = '~/Desktop/spitschan_2017_mri/rawbold';
+params.anatTemplateDir = '~/Desktop/spitschan_2017_mri/anat_templates';
 
 %% (1d) Create preprocessing scripts
 % <!> NOTE: This cell assumes that the freesurfer subjects files have been copied
