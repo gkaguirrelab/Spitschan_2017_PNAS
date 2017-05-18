@@ -7,16 +7,49 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% (0) Dependencies
-% This script requires the following repositories to be local on your
-% machine:
-%           https://github.com/gkaguirrelab/fmriMelanopsinMRIAnalysis/
-%           https://github.com/gkaguirrelab/psychoMelanopsinAnalysis/
-%           https://github.com/gkaguirrelab/pupilMelanopsinMRIAnalysis/
-%           https://github.com/spitschan/splatterMelanopsinMRIAnalysis
-%
-% It relies heavily on automatic path configuration using ToolboxToolbox:
+%% (0) Dependencies and path
+% This script relies heavily on automatic path configuration using
+% ToolboxToolbox:
 %           https://github.com/ToolboxHub/ToolboxToolbox
+%
+% Once installed, use the following to obtain the "reference" repositories.
+% This will download the repositories and allow you to call their
+% dependencies using the calls to tbUse below.
+projRoot = tbGetPref('projectRoot', tbGetPref('projectRoot', fullfile(tbUserFolder(), 'projects')));
+tbUseProject('spitschan_2017_NatureNeuro', 'ToolboxRoot', projRoot);
+
+% Data are hosted on figshare. 
+% For steps (3)-(5), all necessary raw data are in the tar ball archive
+% spitschan_2017_data.tgz.a{a-p}. The MD5 sums are:
+%     MD5 (spitschan_2017_data.tgz.aa) = a74aa0d6ec05ec88ea35bc02c705b567
+%     MD5 (spitschan_2017_data.tgz.ab) = c678cd5f6b79600426129f8f214b31ad
+%     MD5 (spitschan_2017_data.tgz.ac) = 4b9214d8bfbfa63a3781366d21ea2c9a
+%     MD5 (spitschan_2017_data.tgz.ad) = 075e0deae646fe5dcdb4787a46949a61
+%     MD5 (spitschan_2017_data.tgz.ae) = 1b31d028b24b578190f915bf76687033
+%     MD5 (spitschan_2017_data.tgz.af) = b9f89764cba5d9b0373a40b6980b9871
+%     MD5 (spitschan_2017_data.tgz.ag) = f8fb6f95769a08b62aab0256270f831d
+%     MD5 (spitschan_2017_data.tgz.ah) = 547d70a478484effbdb7b1d5613d7b4a
+%     MD5 (spitschan_2017_data.tgz.ai) = 9f41be4082d7865d985d96ceda2caa3d
+%     MD5 (spitschan_2017_data.tgz.aj) = 6e4029d853e842b149b132f72e24c921
+%     MD5 (spitschan_2017_data.tgz.ak) = 7d3b6e43c3e516be8041a42530ec8399
+%     MD5 (spitschan_2017_data.tgz.al) = 448a993018cbecc5e3778d98243970ec
+%     MD5 (spitschan_2017_data.tgz.am) = e0a7073fbb2e30592fc60ac6bc0aaa90
+%     MD5 (spitschan_2017_data.tgz.an) = 6925c994898dcea4138c177e4aa9a484
+%     MD5 (spitschan_2017_data.tgz.ao) = bae8b0ab38d2dd12334b686d9d5496b4
+%     MD5 (spitschan_2017_data.tgz.ap) = 4196514bfe46233c7fc4c1224b864b04
+%
+% The perceptual data are provided in:
+%     MD5 (spitschan_2017_psychodata.tgz.aa) = 6c7d7d43100788523d54abed00821531
+
+% The pupil data are provided as pre-packaged packets here (but they can
+% also be re-generated from the raw data above):
+%     MD5 (spitschan_2017_psychodata.tgz.aa) = 6c7d7d43100788523d54abed00821531
+
+% Please check the integrity of the files before using them. Uncompress the
+% tarball into a directory and set the path here:
+ppsRawDataDir = '~/Desktop/spitschan_2017_data';
+ppsPupilPacketsDir = '~/Desktop/spitschan_2017_pupilpackets';
+ppsPsychoDir = '~/Desktop/spitschan_2017_psychodata';
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -106,14 +139,15 @@ fmriMelanopsinMRIAnalysis_makeAllCRFPackets(params);
 %% (3) Pupillometry data analysis
 % Reference repository:
 %           https://github.com/gkaguirrelab/pupilMelanopsinMRIAnalysis
+%
+% The pupil analysis can be done either with the raw data or with pre-made
+% packets. Set the flag accordingly in pupilPMEL_main.
 
-%% (3a) Before starting: make sure all files are in place
-
-%% (3b) Set up ToolboxToolbox configuration for pupil analysis
+%% (3a) Set up ToolboxToolbox configuration for pupil analysis
 tbUseProject('pupilMelanopsinMRIAnalysis');
 
-%% (3c) Pupil data analysis
-pupilPMEL_main();
+%% (3b) Pupil data analysis
+pupilPMEL_main(ppsRawDataDir, ppsPupilPacketsDir);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -121,13 +155,11 @@ pupilPMEL_main();
 % Reference repository:
 %           https://github.com/gkaguirrelab/pupilMelanopsinMRIAnalysis
 
-%% (4a) Before starting: make sure all files are in place
+%% (4a) Set up ToolboxToolbox configuration for psychophysical data analysis
+tbUseProject('psychoMelanopsinAnalysis');
 
-%% (4b) Set up ToolboxToolbox configuration for psychophysical data analysis
-tbUseProject('psychoMelanopsinMRIAnalysis');
-
-%% (4c) Pupil data analysis
-psychoMelAnalysis_main();
+%% (4b) Pupil data analysis
+psychMelAnalysis_main(ppsPsychoDir);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -135,16 +167,13 @@ psychoMelAnalysis_main();
 % Reference repository:
 %           https://github.com/gkaguirrelab/splatterMelanopsinMRIAnalysis
 
-%% (5a) Before starting: make sure all files are in place
-
-
-%% (5b) Set up ToolboxToolbox configuration for splatter analysis
+%% (5a) Set up ToolboxToolbox configuration for splatter analysis
 tbUseProject('splatterMelanopsinMRIAnalysis');
 
-%% (5c) Splatter data analysis
-splatterMel_AttentionTask();
-splatterMel_PerceptualDataSplatter();
-splatterMel_PhysiologicalSplatterAnalysis();
-splatterMel_SpectraTable();
-splatterMel_SpectralPlots();
-splatterMel_SplatterAnalysis();
+%% (5b) Splatter data analysis
+splatterMel_AttentionTask(ppsRawDataDir);
+splatterMel_PerceptualDataSplatter(ppsRawDataDir);
+splatterMel_PhysiologicalSplatterAnalysis(ppsRawDataDir);
+splatterMel_SpectraTable(ppsRawDataDir);
+splatterMel_SpectralPlots(ppsRawDataDir);
+splatterMel_SplatterAnalysis(ppsRawDataDir);

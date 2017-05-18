@@ -3,91 +3,52 @@
 		"flavor": "",
 		"hook": "",
 		"importance": "",
-		"localHookTemplate": "configuration/fmriMelanopsinMRIAnalysisLocalHook",
+		"localHookTemplate": "",
 		"name": "fmriMelanopsinMRIAnalysis",
 		"pathPlacement": "append",
-		"subfolder": "code",
-		"toolboxRoot": "",
-		"type": "git",
-		"update": "",
-		"url": ""
-	},
-	{
-		"flavor": "",
-		"hook": "",
-		"importance": "",
-		"localHookTemplate": "",
-		"name": "MRklar",
-		"pathPlacement": "append",
 		"subfolder": "",
 		"toolboxRoot": "",
 		"type": "git",
 		"update": "",
-		"url": "https:\/\/github.com\/gkaguirrelab\/MRklar.git"
+		"url": "https:\/\/github.com\/gkaguirrelab\/fmriMelanopsinMRIAnalysis.git"
 	},
 	{
 		"flavor": "",
 		"hook": "",
 		"importance": "",
 		"localHookTemplate": "",
-		"name": "MRlyze",
+		"name": "pupilMelanopsinMRIAnalysis",
 		"pathPlacement": "append",
 		"subfolder": "",
 		"toolboxRoot": "",
 		"type": "git",
 		"update": "",
-		"url": "https:\/\/github.com\/gkaguirrelab\/MRlyze.git"
+		"url": "https:\/\/github.com\/gkaguirrelab\/pupilMelanopsinMRIAnalysis.git"
 	},
 	{
 		"flavor": "",
 		"hook": "",
 		"importance": "",
 		"localHookTemplate": "",
-		"name": "freesurferMatlabLibrary",
+		"name": "psychoMelanopsinAnalysis",
 		"pathPlacement": "append",
 		"subfolder": "",
 		"toolboxRoot": "",
 		"type": "git",
 		"update": "",
-		"url": "https:\/\/github.com\/gkaguirrelab\/freesurferMatlabLibrary.git"
+		"url": "https:\/\/github.com\/gkaguirrelab\/psychoMelanopsinAnalysis.git"
 	},
 	{
 		"flavor": "",
 		"hook": "",
 		"importance": "",
 		"localHookTemplate": "",
-		"name": "temporalFittingEngine",
+		"name": "splatterMelanopsinMRIAnalysis",
 		"pathPlacement": "append",
 		"subfolder": "",
 		"toolboxRoot": "",
 		"type": "git",
 		"update": "",
-		"url": "https:\/\/github.com\/gkaguirrelab\/temporalFittingEngine.git"
-	},
-	{
-		"flavor": "",
-		"hook": "",
-		"importance": "",
-		"localHookTemplate": "",
-		"name": "errbar",
-		"pathPlacement": "append",
-		"subfolder": "",
-		"toolboxRoot": "",
-		"type": "webget",
-		"update": "",
-		"url": "http:\/\/www.mathworks.com\/matlabcentral\/mlc-downloads\/downloads\/submissions\/50472\/versions\/3\/download\/zip"
-	},
-	{
-		"flavor": "",
-		"hook": "",
-		"importance": "",
-		"localHookTemplate": "",
-		"name": "DataHash",
-		"pathPlacement": "append",
-		"subfolder": "",
-		"toolboxRoot": "",
-		"type": "webget",
-		"update": "",
-		"url": "https:\/\/www.mathworks.com\/matlabcentral\/mlc-downloads\/downloads\/submissions\/31272\/versions\/9\/download\/zip"
+		"url": "https:\/\/github.com\/spitschan\/splatterMelanopsinMRIAnalysis.git"
 	}
 ]
