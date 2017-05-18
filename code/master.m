@@ -43,7 +43,7 @@ tbUseProject('spitschan_2017_NatureNeuro', 'ToolboxRoot', projRoot);
 
 % The pupil data are provided as pre-packaged packets here (but they can
 % also be re-generated from the raw data above):
-%     MD5 (spitschan_2017_psychodata.tgz.aa) = 6c7d7d43100788523d54abed00821531
+%     MD5 (spitschan_2017_pupilpackets.tgz.aa) = a3f191c875cbd6823aa3d1b882b46448
 
 % Please check the integrity of the files before using them. Uncompress the
 % tarball into a directory and set the path here:
