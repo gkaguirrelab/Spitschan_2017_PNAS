@@ -49,7 +49,7 @@ tbUseProject('spitschan_2017_NatureNeuro', 'ToolboxRoot', projRoot);
 % tarball into a directory and set the path here:
 ppsRawDataDir = '~/Desktop/spitschan_2017_data';
 ppsPupilPacketsDir = '~/Desktop/spitschan_2017_pupilpackets';
-ppsPsychoDir = '~/Desktop/spitschan_2017_psychodata';
+ppsPsychoDir = '/Users/spitschan/Desktop/spitschan_2017_psychodata';
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -159,7 +159,7 @@ pupilPMEL_main(ppsRawDataDir, ppsPupilPacketsDir);
 tbUseProject('psychoMelanopsinAnalysis');
 
 %% (4b) Pupil data analysis
-psychMelAnalysis_main(ppsPsychoDir);
+psychoMelAnalysis_main(ppsPsychoDir);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
