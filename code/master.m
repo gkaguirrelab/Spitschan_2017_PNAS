@@ -50,6 +50,14 @@ tbUseProject('spitschan_2017_NatureNeuro', 'ToolboxRoot', projRoot);
 ppsRawDataDir = '~/Desktop/spitschan_2017_data';
 ppsPupilPacketsDir = '~/Desktop/spitschan_2017_pupilpackets';
 ppsPsychoDir = '/Users/spitschan/Desktop/spitschan_2017_psychodata';
+analysisDir = '~/Desktop/spitschan_2017_analysis';
+
+% Make the output directories
+if ~isdir(analysisDir);
+   mkdir(analysisDir);
+   mkdir(analysisDir, 'figures');
+   mkdir(analysisDir, 'tables');
+end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -147,7 +155,7 @@ fmriMelanopsinMRIAnalysis_makeAllCRFPackets(params);
 tbUseProject('pupilMelanopsinMRIAnalysis');
 
 %% (3b) Pupil data analysis
-pupilPMEL_main(ppsRawDataDir, ppsPupilPacketsDir);
+pupilPMEL_main(ppsRawDataDir, ppsPupilPacketsDir, analysisDir);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -159,7 +167,7 @@ pupilPMEL_main(ppsRawDataDir, ppsPupilPacketsDir);
 tbUseProject('psychoMelanopsinAnalysis');
 
 %% (4b) Pupil data analysis
-psychoMelAnalysis_main(ppsPsychoDir);
+psychoMelAnalysis_main(ppsPsychoDir, analysisDir);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
