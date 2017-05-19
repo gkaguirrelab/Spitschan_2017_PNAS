@@ -153,8 +153,34 @@ fmriMelanopsinMRIAnalysis_makeAllCRFPackets(params);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% (2) Whole-brain chi-square maps
 
-% <!> Fill in
+% The whole brain maps can be generated starting from the pre-processed MRI
+% data and the packets files for MEL400 and LMS400 stimuli, resulting from
+% step (1).
 
+%% (2a) Set up ToolboxToolbox configuration for fMRI analysis
+tbUseProject('fmriMelanopsinMRIAnalysis');
+
+%% (2b) Download necessary files and set paths
+
+% Download instructions here
+
+% Set all paths necessary for step (2)
+params.dataDir = 'path/to/preprocessed/mri/data';
+params.packets.MEL400 = 'path/to/packets';
+params.packets.LMS400 = 'path/to/packets';
+params.savePath = 'where/results/are/saved';
+
+%% (2c) Generate regressors
+
+fmriMelanopsinMRIAnalysis_generateRegressors(params);
+
+%% (2d) Run FEAT analysis
+
+% run all feat analysis
+
+%% (2e) Make chi-square maps
+
+fmriMelanopsinMRIAnalysis_makeChiSquareMaps(params);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
