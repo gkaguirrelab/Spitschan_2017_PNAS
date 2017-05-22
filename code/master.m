@@ -160,11 +160,8 @@ fmriMelanopsinMRIAnalysis_makeAllCRFPackets(params);
 %% (2a) Set up ToolboxToolbox configuration for fMRI analysis
 tbUseProject('fmriMelanopsinMRIAnalysis');
 
-%% (2b) Download necessary files and set paths
+%% (2b) Set all paths necessary for step (2)
 
-% Download instructions here
-
-% Set all paths necessary for step (2)
 params.dataDir = 'path/to/preprocessed/mri/data';
 params.packets.MEL400 = 'path/to/packets';
 params.packets.LMS400 = 'path/to/packets';
@@ -176,7 +173,9 @@ fmriMelanopsinMRIAnalysis_generateRegressors(params);
 
 %% (2d) Run FEAT analysis
 
-% run all feat analysis
+fmriMelanopsinMRIAnalysis_runFEATanalysis (params)
+
+% run all feat scripts
 
 %% (2e) Make chi-square maps
 
