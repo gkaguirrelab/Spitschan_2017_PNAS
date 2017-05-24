@@ -52,7 +52,7 @@ system('wget spitschan_2017_get_figshare_data.sh');
 % tarball into a directory and set the path here:
 ppsRawDataDir = '~/Desktop/spitschan_2017_data';
 ppsPupilPacketsDir = '~/Desktop/spitschan_2017_pupilpackets';
-ppsPsychoDir = '/Users/spitschan/Desktop/spitschan_2017_psychodata';
+ppsPsychoDir = '~/Desktop/spitschan_2017_psychodata';
 analysisDir = '~/Desktop/spitschan_2017_analysis';
 
 % Make the output directories
