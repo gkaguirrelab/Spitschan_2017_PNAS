@@ -221,7 +221,7 @@ tbUseProject('splatterMelanopsinMRIAnalysis');
 %% (5b) Splatter data analysis
 splatterMel_AttentionTask(ppsRawDataDir, analysisDir);
 splatterMel_PerceptualDataSplatter(psychoStimuliDir, analysisDir);
-splatterMel_PhysiologicalSplatterAnalysis(psychoStimuliDir, analysisDir);
-splatterMel_SpectraTable(psychoStimuliDir, analysisDir);
-splatterMel_SpectralPlots(psychoStimuliDir, analysisDir);
-splatterMel_SplatterAnalysis(psychoStimuliDir, analysisDir);
+splatterMel_PhysiologicalSplatterAnalysis(ppsRawDataDir, analysisDir);
+splatterMel_SpectraTable(ppsRawDataDir, analysisDir);
+splatterMel_SpectralPlots(ppsRawDataDir, analysisDir);
+splatterMel_SplatterAnalysis(ppsRawDataDir, analysisDir);
