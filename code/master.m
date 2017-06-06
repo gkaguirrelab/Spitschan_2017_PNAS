@@ -53,6 +53,7 @@ system('wget spitschan_2017_get_figshare_data.sh');
 ppsRawDataDir = '~/Desktop/spitschan_2017_data';
 ppsPupilPacketsDir = '~/Desktop/spitschan_2017_pupilpackets';
 ppsPsychoDir = '~/Desktop/spitschan_2017_psychodata';
+psychoStimuliDir = '~/Desktop/spitschan_2017_psychostimuli';
 analysisDir = '~/Desktop/spitschan_2017_analysis';
 
 % Make the output directories
@@ -219,8 +220,8 @@ tbUseProject('splatterMelanopsinMRIAnalysis');
 
 %% (5b) Splatter data analysis
 splatterMel_AttentionTask(ppsRawDataDir, analysisDir);
-splatterMel_PerceptualDataSplatter(ppsRawDataDir, analysisDir);
-splatterMel_PhysiologicalSplatterAnalysis(ppsRawDataDir, analysisDir);
-splatterMel_SpectraTable(ppsRawDataDir, analysisDir);
-splatterMel_SpectralPlots(ppsRawDataDir, analysisDir);
-splatterMel_SplatterAnalysis(ppsRawDataDir, analysisDir);
+splatterMel_PerceptualDataSplatter(psychoStimuliDir, analysisDir);
+splatterMel_PhysiologicalSplatterAnalysis(psychoStimuliDir, analysisDir);
+splatterMel_SpectraTable(psychoStimuliDir, analysisDir);
+splatterMel_SpectralPlots(psychoStimuliDir, analysisDir);
+splatterMel_SplatterAnalysis(psychoStimuliDir, analysisDir);
