@@ -16,7 +16,7 @@
 % This will download the repositories and allow you to call their
 % dependencies using the calls to tbUse below.
 projRoot = tbGetPref('projectRoot', tbGetPref('projectRoot', fullfile(tbUserFolder(), 'projects')));
-tbUseProject('spitschan_2017_NatureNeuro', 'ToolboxRoot', projRoot);
+tbUseProject('Spitschan_2017_PNAS', 'ToolboxRoot', projRoot);
 
 % Data are hosted on figshare. To download all the data, please run the
 % following commands:
