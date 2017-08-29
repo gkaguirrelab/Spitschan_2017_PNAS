@@ -57,16 +57,16 @@ psychoStimuliDir = '~/Desktop/spitschan_2017_psychostimuli';
 analysisDir = '~/Desktop/spitschan_2017_analysis';
 
 % Make the output directories
-if ~isdir(analysisDir);
+if ~isdir(analysisDir)
     mkdir(analysisDir);
     mkdir(fullfile(analysisDir, 'figures'));
     mkdir(fullfile(analysisDir, 'tables'));
 end
 
-if ~isdir(fullfile(analysisDir, 'figures'));
+if ~isdir(fullfile(analysisDir, 'figures'))
     mkdir(fullfile(analysisDir, 'figures'));
 end
-if ~isdir(fullfile(analysisDir, 'tables'));
+if ~isdir(fullfile(analysisDir, 'tables'))
     mkdir(fullfile(analysisDir, 'tables'));
 end
 
